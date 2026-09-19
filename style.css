@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+
+    width: 70vw;
+    max-width: 650px;
+    height: 55vh;
+    max-height: 430px;
+
+    border: 5px solid white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* QUESTION */
+
+.question {
+    position: absolute;
+
+    top: 85px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.4;
+
+    white-space: nowrap;
+}
+
+/* BUTTONS */
+
+button {
+    border: none;
+    border-radius: 4px;
+
+    background: #39ff14;
+    color: black;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    padding: 5px 9px;
+
+    cursor: pointer;
+}
+
+#yesBtn {
+    position: absolute;
+
+    left: 50%;
+    bottom: 85px;
+
+    transform: translateX(-50%);
+}
+
+#noBtn {
+    position: absolute;
+
+    left: 58%;
+    bottom: 85px;
+
+    transition: left 0.12s ease,
+                top 0.12s ease;
+}
+
+.created {
+    position: absolute;
+
+    bottom: 62px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 10px;
+
+    color: #777;
+
+    white-space: nowrap;
+}
+
+/* ANSWER */
+
+#answer {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: black;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+#answer h1 {
+    font-size: clamp(30px, 7vw, 55px);
+}
+
+#answer p {
+    font-size: 20px;
+}
+
+#answer button {
+    margin-top: 20px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .box {
+        width: 85vw;
+        height: 55vh;
+    }
+
+    .question {
+        top: 80px;
+    }
+
+    #yesBtn {
+        bottom: 90px;
+    }
+
+    #noBtn {
+        bottom: 90px;
+    }
+}
